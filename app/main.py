@@ -4,12 +4,8 @@ from app.players.dwarves.dwarf_warrior import DwarfWarrior  # noqa: F401
 from app.players.dwarves.dwarf_blacksmith import DwarfBlacksmith  # noqa: F401
 
 
-def calculate_team_total_rating(team: list) -> str:
-    total_rating = 0
-    for player in team:
-        rating = player.get_rating()
-        total_rating += rating
-    return total_rating
+def calculate_team_total_rating(team: list) -> int:
+    return sum(player.get_rating() for player in team)
 
 
 def elves_concert(elves: list) -> str:
